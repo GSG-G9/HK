@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HK AutoComplete</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+
+  <section id="searchSection">
+    <h1>Words Autocomplete</h1>
+    <div class="searchSection-div">
+      <p class="searchSection-p">Start typing:</p>
+      <input type="text" class="searchSection-input-word" name="text" id="input-word" placeholder="Type a word">
+      <input type="button" class="searchSection-submit-button" value="Submit">
+    </div>
+
+    <div id='suggestions'>
+    </div>
+
+  </section>
+
+  <script src="public/js/request.js"></script>
+  <script src="public/js/dom.js"></script>
+</body>
+
+</html>
