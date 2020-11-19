@@ -43,14 +43,14 @@ const homeHandler = (request, response) => {
   });
 };
 
-const errorHandler = (request, response, url) => {
+const errorHandler = (request, response, url,status) => {
   const filePath = path.join(__dirname, '..', '..', url);
   fs.readFile(filePath, (error, file) => {
     if (error) {
       response.writeHead(500);
       response.end();
     } else {
-      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.writeHead( status , { 'Content-Type': 'text/html' });
       response.end(file);
     }
   });

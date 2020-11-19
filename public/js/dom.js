@@ -18,6 +18,7 @@ const createPElement = (text) => {
     searchInput.value = text;
   });
   p.addEventListener('click', () => {
+    // eslint-disable-next-line no-use-before-define
     addDataToDomBasedOnCache();
   });
 
@@ -38,6 +39,7 @@ const addResultToDom = (dataArray) => {
 };
 
 const requestDataFromApi = (setLocalData, callback) => {
+  // eslint-disable-next-line no-undef
   request('/search', 'POST', `${searchInput.name}=${searchInput.value}`, (error, data) => {
     if (error === 404) {
       window.location.href = '../404.html';

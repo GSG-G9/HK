@@ -42,8 +42,14 @@ describe('Test Routers', () => {
   });
   test('GET /404.html should return status code 404', (done) => {
     supertest(router)
-      .get('/unknown')
+      .get('/public/404.html')
       .expect('Content-Type', /html/)
       .expect(404, done);
+  });
+  test('GET /500.html should return status code 500', (done) => {
+    supertest(router)
+      .get('/public/500.html')
+      .expect('Content-Type', /html/)
+      .expect(500, done);
   });
 });
