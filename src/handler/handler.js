@@ -3,7 +3,7 @@ const path = require('path');
 
 const handleSearch = (inputWord, wordListArray) => JSON.stringify({
   result: wordListArray
-    .filter((word) => word.includes(inputWord)),
+    .filter((word) => word.startsWith(inputWord)),
 });
 
 const handlePublicFiles = (req, res, url, serverErrorCallback) => {
