@@ -22,7 +22,6 @@ const createPElement = (text) => {
   });
 
   return p;
-  // class : inline-block - width : 100%
 };
 
 const wordLocalSearch = (word, string) => JSON.stringify({
@@ -47,7 +46,7 @@ const requestDataFromApi = (setLocalData, callback) => {
       window.location.href = '../500.html';
       return;
     } if (error) {
-      console.log(error);
+      window.location.href = '../404.html';
       return;
     }
     setLocalData(data.result, searchInput.value);
