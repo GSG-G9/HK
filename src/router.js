@@ -5,7 +5,6 @@ const {handlePublicFiles,handleSearch}=require("./handler/handler");
 
 const router = (request, response) => {
   const endpoint = request.url;
-
   if (endpoint === "/") {
     const filePath = path.join(__dirname, "..", "public", "index.html");
     fs.readFile(filePath, (error, file) => {
@@ -19,6 +18,17 @@ const router = (request, response) => {
     });
   }else if(endpoint === "/500.html"){
     const filePath = path.join(__dirname, "..", "public", "500.html");
+    fs.readFile(filePath, (error, file) => {
+      if (error) {
+        response.writeHead(500);
+        response.end();
+      } else {
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.end(file);
+      }
+    });
+  }else if(endpoint === "/404.html"){
+    const filePath = path.join(__dirname, "..", "public", "404.html");
     fs.readFile(filePath, (error, file) => {
       if (error) {
         response.writeHead(500);
@@ -48,25 +58,24 @@ const router = (request, response) => {
           response.writeHead(500);
           response.end();
         } else {
-            handleSearch(file,)
-
-          fs.writeFile(filePath, JSON.stringify(newData), (error) => {
-            if (error) {
-              response.writeHead(500, { "Content-Type": "text/html" });
-              response.end("<h1>server error</h1>");
-            }
-            response.writeHead(302, {
-              Location: "/",
-            });
-            response.end();
-          });
-        }
+            const result = handleSearch(receivedData.text,file.split('\n'));
+            response.writeHead(200)
+            response.end(result);
+          };
+        })
       });
+    
+    }else {
+        const filePath = path.join(__dirname, "..", "public", "404.html");
+    fs.readFile(filePath, (error, file) => {
+      if (error) {
+        response.writeHead(500);
+        response.end();
+      } else {
+        response.writeHead(404, { "Content-Type": "text/html" });
+        response.end(file);
+      }
     });
- } else {
-    response.writeHead(404, { "Content-Type": "text/html" });
-    response.write("<h1>page not found</h1>");
-    response.end();
   }
 };
 

@@ -14,6 +14,7 @@ const handlePublicFiles = (req, res, url, serverErrorCallback) => {
     html: 'text/html',
     ico: 'image/x-icon',
     json: 'application/json',
+    jpeg :"image/jpeg"
   };
   const filePath = path.join(__dirname, '..', '..', url);
   fs.readFile(filePath, (error, file) => {
