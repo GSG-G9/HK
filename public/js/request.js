@@ -1,6 +1,5 @@
 const request = (url, method, data = null, callback) => {
   const xhr = new XMLHttpRequest();
-  console.log(data);
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
