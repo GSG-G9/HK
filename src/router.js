@@ -11,9 +11,9 @@ const router = (request, response) => {
   if (endpoint === '/') {
     homeHandler(request, response);
   } else if (endpoint === '/public/500.html') {
-    errorHandler(request, response, endpoint);
+    errorHandler(request, response, endpoint, 500);
   } else if (endpoint === '/public/404.html') {
-    errorHandler(request, response, endpoint);
+    errorHandler(request, response, endpoint, 404);
   } else if (endpoint.includes('/public')) {
     handlePublicFiles(request, response, endpoint, (error, res) => {
       res.writeHead(500);
