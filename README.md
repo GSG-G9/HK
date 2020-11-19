@@ -13,6 +13,9 @@ Visit this [Link](https://hk-autocomplete.herokuapp.com/) to view our App
 
 This Website make a word autocomplete - it's search in a big file (235887 word) - you can download it form [here](https://github.com/dwyl/autocomplete/blob/master/words.txt)
 
+### Why?
+Learning how to build full-stack single-page apps can be laborious when the example app isn't particularly interesing/engaging, HK is an ultra-simple app that will teach you full-stack test-driven-development using (only) core node.js modules on the backend and basic Js on the front-end (no fancy frameworks).
+
 ### What you will find here :-
 
 #### Main Page
@@ -100,6 +103,8 @@ We make the following work plan :-
 ### Function showDataInPage
   - Make function to manage display in frontend in pages when data length more than specific number
 
+
+
 ### User story
 
 As a Customer looking to help me in a word autocomplete 
@@ -117,4 +122,4 @@ As a Customer looking autocomplete a word
 2. Add some effects to navbar with a flip background
 3. Make nicer design for input data
 4. make another api call for the result.
-5. using some advance methods to optimize requests based on time like debounce function
+5. using some advance methods to optimize requests based on time like debounce function .
